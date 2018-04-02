@@ -1,0 +1,40 @@
+Given a string, find the length of the longest substring without repeating characters.
+Examples:
+Given "abcabcbb", the answer is "abc", which the length is 3.
+Given "bbbbb", the answer is "b", with the length of 1.
+Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+/**
+ * @param {string} s
+ * @return {number}
+ */
+
+Understand:
+  - find length of longest substring
+  - cannot repeat characters
+
+Approaches:
+  - brute force:
+    - check every possible substring
+    - set longest to 0
+    - if it's valid (no repeating chars)
+      - if it's longer than prev longest, it's the new longest
+  - sliding window unoptimized:
+    - keep track of character occurrences in a hash set
+    - window = s[i...j] where i = j initially
+    - check if s[j] is already in the hash set
+    - if it's not, we add it to the hash set and increment it
+    - if it is, we remove the character at s[i] from the hash set and then increment i
+    - Time Complexity: O(2n), or just O(n)
+      - this is because each char will be visited twice, once each by i and j
+  - sliding window optimized:
+    - keep track of the last occurrence of each character in a hash map
+    - window = s[i...j] where i = j = 0 initially
+    - if s[j] has a duplicate in the hash map with index j', we can skip a bunch of chars and just set i = j' + 1
+    - Time Complexity: O(n)
+
+
+What do I need to keep track of for greedy algo?
+  - longest substring so far
+  - how do I know what the length of the longest substring that ends in current char is without O(n^2), having to search every letter from beginning of string each time?
+
+Notes on Sliding Window:
