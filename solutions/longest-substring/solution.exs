@@ -13,20 +13,26 @@
 #       - map = current map with current char added or updated
 
 defmodule MyString do
-  def length_of_longest_substring(string, i \\ 0, j \\ 0, l \\ 0, map \\ %{}) do
-    if j >= String.length(string) do
-      l
+  def length_of_longest_substring(string), do: string |> length_of_longest_substring(0, 0, 0, %{})
+
+  defp length_of_longest_substring(string, start_index, end_index, longest, indexes) do
+    if end_index >= String.length(string) do
+      longest
     else
-      currrent_char = String.at(string, j)
-      last_index = Map.get(map, currrent_char, -1)
-      updated_map = Map.put(map, currrent_char, j)
+      currrent_char = String.at(string, end_index)
+      previous_occurrence = Map.get(indexes, currrent_char, -1)
+      updated_indexes = Map.put(indexes, currrent_char, end_index)
 
       cond do
-        last_index >= i ->
-          length_of_longest_substring(string, last_index + 1, j, l, updated_map)
+        previous_occurrence >= start_index ->
+          string |> length_of_longest_substring(previous_occurrence + 1, end_index, longest, updated_indexes)
+
         true ->
-          length_of_longest_substring(string, i, j + 1, max(l, j - i + 1), updated_map)
+          longest = max(longest, end_index - start_index + 1)
+
+          string |> length_of_longest_substring(start_index, end_index + 1, longest, updated_indexes)
       end
     end
   end
 end
+

@@ -1,7 +1,7 @@
 Code.require_file("./elixir-test/test_helper.exs")
 Code.require_file("./solutions/longest-substring/solution.exs")
 
-defmodule MyStringTest do
+defmodule LongestSubstringTest do
   use ExUnit.Case
 
   test "returns 1 for c" do
