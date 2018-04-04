@@ -2,7 +2,7 @@
 var Benchmark = require('benchmark');
 var suite = new Benchmark.Suite;
 
-var path = '../solutions/longest-palindrome/solution.js';
+var path = '../problems/longest-palindrome/solution.js';
 var longestPalindrome = require(path);
 
 suite

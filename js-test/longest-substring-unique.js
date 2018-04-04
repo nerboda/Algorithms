@@ -1,9 +1,9 @@
 /* eslint-disable */
 var expect = require('expect.js');
-var greedyPath = '../solutions/longest-substring/greedy.js';
-var brutePath = '../solutions/longest-substring/brute.js';
-var slidingWindowUnoptimizedPath = '../solutions/longest-substring/sliding-window-unoptimized.js';
-var slidingWindowOptimizedPath = '../solutions/longest-substring/sliding-window-optimized.js';
+var greedyPath = '../problems/longest-substring-unique/greedy.js';
+var brutePath = '../problems/longest-substring-unique/brute.js';
+var slidingWindowUnoptimizedPath = '../problems/longest-substring-unique/sliding-window-unoptimized.js';
+var slidingWindowOptimizedPath = '../problems/longest-substring-unique/sliding-window-optimized.js';
 var longestSubstringGreedy = require(greedyPath);
 var longestSubstringBrute = require(brutePath);
 var slidingWindowUnoptimized = require(slidingWindowUnoptimizedPath);

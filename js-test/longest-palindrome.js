@@ -1,6 +1,6 @@
 /* eslint-disable */
 var expect = require('expect.js');
-var path = '../solutions/longest-palindrome/solution.js';
+var path = '../problems/longest-palindrome/solution.js';
 var longestPalindrome = require(path);
 
 describe('longestPalindrome', function() {
