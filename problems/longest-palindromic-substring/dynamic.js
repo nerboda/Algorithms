@@ -40,6 +40,8 @@ Pseudo code:
           - longest = substring
   - return longest
 
+NOTE: This is performing terribly. Need to do more research into a better way to implement this.
+
 */
 
 var isPalindrome = function(s) {
