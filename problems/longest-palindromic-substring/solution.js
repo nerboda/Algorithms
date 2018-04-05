@@ -1,20 +1,4 @@
 /* eslint-disable */
-// Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
-
-// Example:
-
-// Input: "babad"
-
-// Output: "bab"
-
-// Note: "aba" is also a valid answer. 
-
-// Example:
-
-// Input: "cbbd"
-
-// Output: "bb"
-
 /*
 Understand the Problem:
   - input: string
@@ -63,7 +47,7 @@ var isPalindrome = function(s) {
   return true;
 }
 
-var longestPalindrome = function(s) {
+var longestPalindromicSubstring = function(s) {
   var subtraction, length, startIndex, substring;
 
   for (subtraction = 0; subtraction <= s.length; subtraction++) {
@@ -79,4 +63,4 @@ var longestPalindrome = function(s) {
   return '';
 };
 
-module.exports = longestPalindrome;
+module.exports = longestPalindromicSubstring;
